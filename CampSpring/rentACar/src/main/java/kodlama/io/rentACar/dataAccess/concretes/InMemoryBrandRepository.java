@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import kodlama.io.rentACar.dataAccess.abstracts.BrandRepository;
 import kodlama.io.rentACar.entities.concretes.Brand;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class InMemoryBrandRepository implements BrandRepository {
 
     List<Brand> brands;
