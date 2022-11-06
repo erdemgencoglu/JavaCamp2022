@@ -1,10 +1,10 @@
 package kodlama.io.rentACar.dataAccess.abstracts;
 
-import java.util.List;
 import kodlama.io.rentACar.entities.concretes.Brand;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-public interface BrandRepository {
-
-    List<Brand> getAll();
+@Repository
+public interface BrandRepository extends JpaRepository<Brand, Integer>{
+    //1 interface diğer interfaci extend edebilir
 }

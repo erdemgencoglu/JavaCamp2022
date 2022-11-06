@@ -1,5 +1,6 @@
 package kodlama.io.rentACar.business.concretes;
 
+import java.util.ArrayList;
 import java.util.List;
 import kodlama.io.rentACar.business.abstracts.BrandService;
 import kodlama.io.rentACar.dataAccess.abstracts.BrandRepository;
@@ -19,7 +20,7 @@ public class BrandManager implements BrandService {
 
     @Override
     public List<Brand> getAll() {
-        return brandRepository.getAll();
+       return brandRepository.findAll();
     }
 
 }
