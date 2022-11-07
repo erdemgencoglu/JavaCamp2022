@@ -16,5 +16,5 @@ import lombok.NoArgsConstructor;
 public class LanguageResp {
 
     private String name;
-    private List<Technologies> technologies;
+    private List<TechnologiesResponse> technologies;
 }

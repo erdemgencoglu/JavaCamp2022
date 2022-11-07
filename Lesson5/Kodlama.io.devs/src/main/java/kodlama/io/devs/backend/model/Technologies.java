@@ -1,5 +1,6 @@
 package kodlama.io.devs.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,12 +28,15 @@ public class Technologies {
     private String name;
     @ManyToOne
     @JoinColumn(name = "language_id")
+    @JsonIgnore
     private Language language;
 
     public Technologies(String name, Language language) {
         this.name = name;
         this.language = language;
     }
-    
-    
+
 }
+//   @ManyToOne -> Çoka-Bir ilişki
+//   @JoinColumn(name = "language_id") ->  Join yapılacak alanı ifade eder
+//   @JsonIgnore ->İlgili değişkenin response larda görünürlüğünü pasif eder. (Java Jackson kütüphanesi anatasyonu)

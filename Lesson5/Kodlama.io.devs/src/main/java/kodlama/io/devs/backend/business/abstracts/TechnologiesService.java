@@ -4,6 +4,7 @@ import java.util.List;
 import kodlama.io.devs.backend.model.Technologies;
 import kodlama.io.devs.backend.model.vm.request.TechnologyReq;
 import kodlama.io.devs.backend.model.vm.response.GenericResp;
+import kodlama.io.devs.backend.model.vm.response.TechnologiesResponse;
 
 /**
  *
@@ -11,13 +12,13 @@ import kodlama.io.devs.backend.model.vm.response.GenericResp;
  */
 public interface TechnologiesService {
 
-    List<Technologies> getAll();
+    List<TechnologiesResponse> getAll();
 
-    Technologies getTechnologies(int id) throws Exception;
+    TechnologiesResponse getTechnologies(int id) throws Exception;
 
     GenericResp add(TechnologyReq technologies) throws Exception;
 
-    GenericResp update(TechnologyReq technologies) throws Exception;
+    GenericResp update(Technologies technologies) throws Exception;
 
     GenericResp delete(int id) throws Exception;
 }

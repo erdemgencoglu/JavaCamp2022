@@ -1,6 +1,7 @@
 package kodlama.io.devs.backend.business.abstracts;
 
 import java.util.List;
+import kodlama.io.devs.backend.model.Language;
 import kodlama.io.devs.backend.model.vm.request.LanguageReq;
 import kodlama.io.devs.backend.model.vm.response.GenericResp;
 import kodlama.io.devs.backend.model.vm.response.LanguageResp;
@@ -17,7 +18,7 @@ public interface LanguageService {
 
     GenericResp add(LanguageReq langauge) throws Exception;
 
-    GenericResp update(LanguageReq langauge) throws Exception;
+    GenericResp update(Language langauge) throws Exception;
 
     GenericResp delete(int id) throws Exception;
 

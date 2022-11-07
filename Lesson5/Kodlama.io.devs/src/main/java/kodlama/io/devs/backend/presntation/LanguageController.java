@@ -40,7 +40,7 @@ public class LanguageController {
         return languageService.getAll();
     }
 
-    @GetMapping("/getById/{id}")
+    @GetMapping("/get/{id}")
     public LanguageResp getLanguage(@PathVariable int id) throws Exception {
         return languageService.getLanguage(id);
     }
@@ -51,7 +51,7 @@ public class LanguageController {
     }
 
     @PutMapping("/update")
-    public GenericResp updateLanguages(@RequestBody LanguageReq language) throws Exception {
+    public GenericResp updateLanguages(@RequestBody Language language) throws Exception {
         return languageService.update(language);
     }
 
