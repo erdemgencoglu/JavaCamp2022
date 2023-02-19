@@ -1,4 +1,4 @@
-package kodlama.io.rentACar.entities.concretes;
+package kodlama.io.rentACar.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

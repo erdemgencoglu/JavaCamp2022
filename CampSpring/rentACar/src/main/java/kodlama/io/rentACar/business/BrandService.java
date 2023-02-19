@@ -1,24 +1,21 @@
-package kodlama.io.rentACar.business.concretes;
+package kodlama.io.rentACar.business;
 
 import java.util.ArrayList;
 import java.util.List;
-import kodlama.io.rentACar.business.abstracts.BrandService;
+import kodlama.io.rentACar.business.abstracts.IBrandService;
 import kodlama.io.rentACar.configuration.request.CreateBrandRequest;
 import kodlama.io.rentACar.configuration.responses.GetAllBrandResponse;
 import kodlama.io.rentACar.dataAccess.abstracts.BrandRepository;
-import kodlama.io.rentACar.entities.concretes.Brand;
+import kodlama.io.rentACar.models.Brand;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BrandManager implements BrandService {
+@AllArgsConstructor
+public class BrandService implements IBrandService {
 
     private BrandRepository brandRepository;
-
-    @Autowired
-    public BrandManager(BrandRepository brandRepository) {
-        this.brandRepository = brandRepository;
-    }
 
     @Override
     public List<GetAllBrandResponse> getAll() {

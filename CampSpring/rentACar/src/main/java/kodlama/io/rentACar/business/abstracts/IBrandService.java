@@ -4,7 +4,7 @@ import java.util.List;
 import kodlama.io.rentACar.configuration.request.CreateBrandRequest;
 import kodlama.io.rentACar.configuration.responses.GetAllBrandResponse;
 
-public interface BrandService {
+public interface IBrandService {
 
     List<GetAllBrandResponse> getAll();
 
