@@ -4,9 +4,11 @@
  */
 package kodlama.io.rentACar.presentation;
 
-import kodlama.io.rentACar.business.abstracts.IBrandService;
+import kodlama.io.rentACar.business.BrandService;
 import kodlama.io.rentACar.configuration.request.CreateBrandRequest;
+import kodlama.io.rentACar.configuration.request.UpdateBrandRequest;
 import kodlama.io.rentACar.configuration.responses.GetAllBrandResponse;
+import kodlama.io.rentACar.configuration.responses.GetByIdResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -21,17 +23,31 @@ import java.util.List;
 @AllArgsConstructor
 public class BrandController {
 
-    IBrandService IBrandService;
+    BrandService brandService;
 
     @GetMapping()
     public List<GetAllBrandResponse> getBrands() {
-        return IBrandService.getAll();
+        return brandService.getAll();
     }
 
     @PostMapping()
     @ResponseStatus(code = HttpStatus.CREATED)
     public void add(@RequestBody CreateBrandRequest createBrandRequest) {
-        IBrandService.add(createBrandRequest);
+        brandService.add(createBrandRequest);
     }
 
+    @GetMapping("/{id}")
+    public GetByIdResponse getBrand(@PathVariable int id) {
+        return brandService.getById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable int id) {
+        brandService.delete(id);
+    }
+
+    @PutMapping
+    public void update(@RequestBody UpdateBrandRequest updateBrandRequest) {
+        brandService.update(updateBrandRequest);
+    }
 }
