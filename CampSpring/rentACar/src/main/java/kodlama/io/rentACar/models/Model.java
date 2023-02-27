@@ -5,15 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "brands")
-public class Brand {
-
+@NoArgsConstructor
+@Table(name = "models")
+public class Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -21,9 +19,9 @@ public class Brand {
     @Column(name = "NAME")
     private String name;
 
-    @OneToMany(mappedBy = "brand")
-    private List<Model> model;
-
-    @OneToMany(mappedBy = "model")
-    private List<Car> cars;
+    @ManyToOne
+    @JoinColumn(
+            name = "brand_id"
+    )
+    private Brand brand;
 }
