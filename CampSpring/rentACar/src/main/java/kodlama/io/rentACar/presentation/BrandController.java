@@ -13,6 +13,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -32,7 +33,7 @@ public class BrandController {
 
     @PostMapping()
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void add(@RequestBody CreateBrandRequest createBrandRequest) {
+    public void add(@RequestBody @Valid CreateBrandRequest createBrandRequest) {
         brandService.add(createBrandRequest);
     }
 
